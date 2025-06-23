@@ -1,5 +1,5 @@
-username: dima
-password: 12345678
+username: dmitry
+password:
 host: localhost
 port: 5432
 databaseName: parser

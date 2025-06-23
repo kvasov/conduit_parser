@@ -1,6 +1,7 @@
 import 'package:parser/controller/expression_add_controller.dart';
 import 'package:parser/controller/expression_delete_controller.dart';
 import 'package:parser/controller/expression_list_controller.dart';
+import 'package:parser/controller/hello_controller.dart';
 import 'package:parser/model/model.dart';
 import 'package:parser/parser.dart';
 import 'package:conduit_core/conduit_core.dart';
@@ -21,8 +22,7 @@ class ParserChannel extends ApplicationChannel {
   /// This method is invoked prior to [entryPoint] being accessed.
   @override
   Future prepare() async {
-    hierarchicalLoggingEnabled = true;
-    Logger("conduit").level = Level.FINE;
+
     logger.onRecord.listen(
         (rec) => print("$rec ${rec.error ?? ""} ${rec.stackTrace ?? ""}"));
 
@@ -47,11 +47,12 @@ class ParserChannel extends ApplicationChannel {
     final router = Router();
 
     router
-        .route("/model/[:id]")
+        .route("/parser/[:id]")
         .link(() => ManagedObjectController<Expression>(context));
-    router.route("/model/add").link(() => ExpressionAddController(context));
-    router.route("/model/delete/:id").link(() => ExpressionDeleteController(context));
-    router.route("/models/view").link(() => ExpressionListController(context));
+    router.route("/parser/add").link(() => ExpressionAddController(context));
+    router.route("/parser/delete/:id").link(() => ExpressionDeleteController(context));
+    router.route("/parser/view").link(() => ExpressionListController(context));
+    router.route("/hello").link(() => HelloController());
     return router;
   }
 
