@@ -31,7 +31,7 @@ class ParserChannel extends ApplicationChannel {
 
     final dataModel = ManagedDataModel.fromCurrentMirrorSystem();
     final psc = PostgreSQLPersistentStore.fromConnectionInfo(
-        "dmitry", "", "localhost", 5432, "parser");
+        "dima", "12345678", "localhost", 5432, "parser");
 
     context = ManagedContext(dataModel, psc);
   }
