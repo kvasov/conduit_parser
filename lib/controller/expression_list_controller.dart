@@ -40,7 +40,7 @@ class ExpressionListController extends ResourceController {
       }
       buffer.writeln('</td>');
       buffer.writeln('<td>${model.result}</td>');
-      buffer.writeln('<td><a href="/model/delete/${model.id}">Delete</a></td>');
+      buffer.writeln('<td><a href="/parser/delete/${model.id}">Delete</a></td>');
       buffer.writeln('</tr>');
     }
 

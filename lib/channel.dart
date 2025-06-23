@@ -5,7 +5,6 @@ import 'package:parser/controller/hello_controller.dart';
 import 'package:parser/model/model.dart';
 import 'package:parser/parser.dart';
 import 'package:conduit_core/conduit_core.dart';
-import 'package:logging/logging.dart';
 
 /// This type initializes an application.
 ///
@@ -31,7 +30,11 @@ class ParserChannel extends ApplicationChannel {
 
     final dataModel = ManagedDataModel.fromCurrentMirrorSystem();
     final psc = PostgreSQLPersistentStore.fromConnectionInfo(
-        "dima", "12345678", "localhost", 5432, "parser");
+        config.database?.username,
+        config.database?.password,
+        config.database?.host,
+        config.database?.port,
+        config.database?.databaseName);
 
     context = ManagedContext(dataModel, psc);
   }

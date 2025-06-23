@@ -1,0 +1,31 @@
+# Dart & Conduit
+.dart_tool/
+.packages
+pubspec.lock
+build/
+
+# IDEs
+.idea/
+.vscode/
+*.iml
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Environment & config
+.env
+*.yaml.backup
+config.yaml
+config.src.yaml
+database.yaml
+
+# Coverage
+coverage/
+
+# Other
+*.swp
+*.swo
