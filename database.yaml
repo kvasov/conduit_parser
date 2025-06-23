@@ -1,0 +1,5 @@
+username: dmitry
+password:
+host: localhost
+port: 5432
+databaseName: parser
