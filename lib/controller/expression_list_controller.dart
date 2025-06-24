@@ -7,7 +7,9 @@ class ExpressionListController extends ResourceController {
 
   @Operation.get()
   Future<Response> getAllModelsWithOpts() async {
-    final query = Query<Expression>(context)..join(set: (m) => m.opts);
+    final query = Query<Expression>(context)
+      ..join(set: (m) => m.opts)
+      ..sortBy((m) => m.createdAt, QuerySortOrder.descending);
     final models = await query.fetch();
 
     final buffer = StringBuffer();

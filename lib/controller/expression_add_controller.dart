@@ -2,7 +2,6 @@ import 'package:parser/controller/parser.dart';
 import 'package:parser/parser.dart';
 import 'package:parser/model/model.dart';
 import 'package:parser/model/opt.dart';
-import 'package:logging/logging.dart';
 
 class ExpressionAddController extends ResourceController {
   ExpressionAddController(this.context);
