@@ -14,7 +14,7 @@ class ExpressionListController extends ResourceController {
 
     final buffer = StringBuffer();
     buffer.writeln('<html>');
-    buffer.writeln('<head><title>Models and Opts</title>');
+    buffer.writeln('<head><title>Calc</title>');
     buffer.writeln('<style>');
     buffer.writeln(
         'table { font-family: sans-serif; border-collapse: collapse; width: 100%; }');
