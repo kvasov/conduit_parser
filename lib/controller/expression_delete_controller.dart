@@ -10,7 +10,7 @@ class ExpressionDeleteController extends ResourceController {
     final query = Query<Expression>(context)..where((m) => m.id).equalTo(id);
     final count = await query.delete();
     if (count == 0) {
-      return Response.notFound(body: {'message': 'Model with id $id not found'});
+      return Response.notFound(body: {'message': 'Expression with id $id not found'});
     }
     return Response.ok({'deleted_count': count});
   }
@@ -21,11 +21,11 @@ class ExpressionDeleteController extends ResourceController {
     final count = await query.delete();
     if (count == 0) {
       return Response.notFound(
-        body: '<html><body><h2>Model with id $id not found</h2><a href="/models/view">Back to list</a></body></html>'
+        body: '<html><body><h2>Expression with id $id not found</h2><a href="/parser/view">Back to list</a></body></html>'
       )..contentType = ContentType.html;
     }
     return Response.ok(
-      '<html><body><h2>Model with id $id deleted</h2><a href="/models/view">Back to list</a></body></html>'
+      '<html><body><h2>Expression with id $id deleted</h2><a href="/parser/view">Back to list</a></body></html>'
     )..contentType = ContentType.html;
   }
 }
